@@ -216,9 +216,29 @@
 .home-hero__copy {
   display: flex;
   flex-direction: column;
-  gap: clamp(1.15rem, 2.5vw, 1.5rem);
+  gap: clamp(0.9rem, 2.2vw, 1.2rem);
   justify-content: center;
-  max-width: 36rem;
+  max-width: 34rem;
+}
+
+.home-hero__kicker {
+  color: color-mix(in oklch, var(--muted-foreground) 96%, transparent);
+  font-family: var(--font-sans);
+  font-size: clamp(0.775rem, 1.05vw, 0.8525rem);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.home-hero__microfacts {
+  color: var(--muted-foreground);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  line-height: 1.42;
+  margin: 0.15rem 0 0;
+  max-width: 28rem;
 }
 
 .home-hero h1,
@@ -248,9 +268,10 @@
 
 .home-hero__lede {
   color: var(--muted-foreground);
-  font-size: clamp(1.05rem, 1.6vw, 1.22rem);
-  line-height: 1.65;
-  max-width: 42rem;
+  font-size: clamp(1rem, 1.42vw, 1.1325rem);
+  line-height: 1.55;
+  margin: 0;
+  max-width: 38ch;
 }
 
 .home-hero__actions {
@@ -276,28 +297,6 @@
   color: var(--foreground);
   text-decoration: underline;
   text-underline-offset: 0.25rem;
-}
-
-.home-hero__facts {
-  border-top: 1px solid var(--border);
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 0.8rem;
-  max-width: 35rem;
-  padding-top: 1rem;
-}
-
-.home-hero__facts dt {
-  color: var(--foreground);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.home-hero__facts dd {
-  color: var(--muted-foreground);
-  font-size: 0.78rem;
-  margin: 0.12rem 0 0;
 }
 
 .hero-scene {
@@ -987,10 +986,6 @@
   .site-header__buy {
     margin-left: 0;
     width: 100%;
-  }
-
-  .home-hero__facts {
-    grid-template-columns: 1fr;
   }
 
   .hero-scene__body {

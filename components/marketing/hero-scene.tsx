@@ -17,9 +17,7 @@ export function HeroScene() {
             <span className="hero-scene__presence hero-scene__presence--you" />
             <span className="hero-scene__presence hero-scene__presence--guest" />
           </div>
-          <p className="hero-scene__frame-label">
-            Camera preview — everything here stays on your Mac.
-          </p>
+          <p className="hero-scene__frame-label">Preview stays on your Mac.</p>
         </div>
 
         <aside className="hero-scene__sidebar">
@@ -43,14 +41,14 @@ export function HeroScene() {
             </dl>
             <div className="hero-scene__toast" role="presentation">
               <span className="hero-scene__toast-dot" />
-              <span>Soft notice — someone is still behind you.</span>
+              <span>Someone's still behind you.</span>
             </div>
           </div>
         </aside>
       </div>
 
       <figcaption className="hero-scene__footnote">
-        Your camera never leaves your Mac. We only see your purchase when you buy.
+        Your camera stays here. Buying is separate.
       </figcaption>
     </figure>
   );

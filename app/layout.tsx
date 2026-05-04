@@ -6,12 +6,13 @@ import { getMarketingCanonicalOrigin } from "@/lib/site-metadata";
 import "./globals.css";
 
 const titleMeta = {
-  default: "GlanceGuard - notice when someone is reading over your shoulder",
+  default:
+    "GlanceGuard - quiet heads-up when someone is behind your screen",
   template: "%s - GlanceGuard",
 } satisfies Metadata["title"];
 
 const description =
-  "A small Mac app that gives you a quiet heads-up when someone is reading over your shoulder. $20, one Mac, yours forever. Your camera stays on your Mac.";
+  "Quiet heads-up from your webcam when someone lingers behind you. Stays on your Mac. $20 once, one Mac, 30-day refund.";
 
 export const metadata: Metadata = {
   metadataBase: getMarketingCanonicalOrigin(),

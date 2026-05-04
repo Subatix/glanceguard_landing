@@ -43,34 +43,21 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="home-hero__inner">
           <div className="home-hero__copy">
-            <p className="section-kicker">For your Mac · made for working in public</p>
-            <h1>Notice when someone is reading over your shoulder.</h1>
+            <p className="home-hero__kicker">Mac · desks, cafes, flights</p>
+            <h1>Someone behind your screen?</h1>
             <p className="home-hero__lede">
-              GlanceGuard quietly keeps an eye on your webcam and gives you a
-              small nudge if someone is staying behind you. It only ever runs
-              on your Mac — your camera never leaves it.
+              Quiet heads-up when someone lingers behind you.
+              Everything stays on your Mac. Nothing uploads.
             </p>
             <div className="home-hero__actions">
               <BuyCheckoutButton className="home-hero__button" />
               <p>
-                $20 once, yours forever, on one Mac.{" "}
-                <Link href="/refund">30-day refund</Link>.
+                $20 · one Mac · <Link href="/refund">30-day refund</Link>
               </p>
             </div>
-            <dl className="home-hero__facts">
-              <div>
-                <dt>Stays on your Mac</dt>
-                <dd>your camera, not the cloud</dd>
-              </div>
-              <div>
-                <dt>Quiet on purpose</dt>
-                <dd>a small heads-up, never an alarm</dd>
-              </div>
-              <div>
-                <dt>Out of the way</dt>
-                <dd>lives in the menu bar</dd>
-              </div>
-            </dl>
+            <p className="home-hero__microfacts">
+              On your Mac · gentle notice · menu bar
+            </p>
           </div>
 
           <HeroScene />
