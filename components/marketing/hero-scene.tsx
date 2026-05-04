@@ -1,12 +1,6 @@
-const observerMarks = [
-  { label: "now", state: "quiet" },
-  { label: "·", state: "tracking" },
-  { label: "heads-up", state: "alert" },
-] as const;
-
 export function HeroScene() {
   return (
-    <figure className="hero-scene" aria-label="GlanceGuard product scene">
+    <figure className="hero-scene" aria-label="GlanceGuard product preview">
       <div className="hero-scene__bar">
         <div className="hero-scene__traffic" aria-hidden>
           <span />
@@ -18,45 +12,45 @@ export function HeroScene() {
       </div>
 
       <div className="hero-scene__body">
-        <div className="hero-scene__camera" aria-hidden>
-          <div className="hero-scene__frame">
-            <span className="hero-scene__face hero-scene__face--owner" />
-            <span className="hero-scene__face hero-scene__face--observer" />
-            <span className="hero-scene__gridline hero-scene__gridline--x" />
-            <span className="hero-scene__gridline hero-scene__gridline--y" />
+        <div className="hero-scene__viewport">
+          <div className="hero-scene__frame" aria-hidden>
+            <span className="hero-scene__presence hero-scene__presence--you" />
+            <span className="hero-scene__presence hero-scene__presence--guest" />
           </div>
-          <div className="hero-scene__caption">
-            <span>Your view</span>
-            <span>Stays on your Mac</span>
-          </div>
+          <p className="hero-scene__frame-label">
+            Camera preview — everything here stays on your Mac.
+          </p>
         </div>
 
-        <div className="hero-scene__panel">
-          <div className="hero-scene__metric">
-            <span>It’s you</span>
-            <strong>recognised</strong>
-          </div>
-          <div className="hero-scene__metric">
-            <span>Someone else</span>
-            <strong>still there</strong>
-          </div>
-          <div className="hero-scene__timeline">
-            {observerMarks.map((mark) => (
-              <div className="hero-scene__mark" data-state={mark.state} key={mark.label}>
-                <span />
-                <small>{mark.label}</small>
+        <aside className="hero-scene__sidebar">
+          <div className="hero-scene__card">
+            <p className="hero-scene__card-title">Today</p>
+            <dl className="hero-scene__status-list">
+              <div className="hero-scene__status-row">
+                <dt>You</dt>
+                <dd>
+                  <span className="hero-scene__pill">In frame</span>
+                </dd>
               </div>
-            ))}
+              <div className="hero-scene__status-row">
+                <dt>Behind you</dt>
+                <dd>
+                  <span className="hero-scene__pill hero-scene__pill--accent">
+                    Staying put
+                  </span>
+                </dd>
+              </div>
+            </dl>
+            <div className="hero-scene__toast" role="presentation">
+              <span className="hero-scene__toast-dot" />
+              <span>Soft notice — someone is still behind you.</span>
+            </div>
           </div>
-          <div className="hero-scene__alert" role="presentation">
-            <span className="hero-scene__alert-dot" />
-            Someone is still behind you.
-          </div>
-        </div>
+        </aside>
       </div>
 
       <figcaption className="hero-scene__footnote">
-        Your camera stays on your Mac. We only ever see your purchase.
+        Your camera never leaves your Mac. We only see your purchase when you buy.
       </figcaption>
     </figure>
   );
