@@ -1,48 +1,53 @@
-const localItems = [
-  "Your camera",
-  "Your face",
-  "What it sees",
-  "Whether to nudge you",
+const onDevice = [
+  "What your webcam shows",
+  "Who counts as you vs someone new",
+  "When to cue you quietly",
 ] as const;
 
-const serverItems = [
-  "Your purchase",
-  "Your license",
-  "Your email for the receipt",
+const onOurSystems = [
+  "Checkout through Stripe",
+  "License mailed to your inbox",
+  "Refund if it is not for you",
 ] as const;
 
 export function PrivacyBoundary() {
   return (
     <section className="privacy-boundary" id="privacy-story">
-      <div className="section-kicker">What stays where</div>
+      <p className="privacy-boundary__eyebrow">Privacy, in plain terms</p>
       <div className="privacy-boundary__header">
-        <h2>Your camera stays on your Mac. We just handle the receipt.</h2>
+        <h2>Commerce is online. Your camera work is not.</h2>
         <p>
-          GlanceGuard is a small Mac app — the camera work happens there. Our
-          side is just the part that handles your purchase, sends you your
-          license, and lets you ask for a refund if you want one.
+          Everything that looks through the lens finishes on your Mac. The
+          only reason our servers wake up is the sale itself—proof of purchase,
+          your license token, receipt email, refunds if you ask.
         </p>
       </div>
 
-      <div className="privacy-boundary__map" aria-label="What stays on your Mac versus what we see">
-        <div className="privacy-boundary__side">
-          <p className="privacy-boundary__label">On your Mac</p>
-          <ul>
-            {localItems.map((item) => (
-              <li key={item}>{item}</li>
+      <div
+        className="privacy-boundary__split"
+        aria-label="Split between your Mac and our systems"
+      >
+        <div className="privacy-boundary__pane">
+          <h3 className="privacy-boundary__pane-title">On this Mac only</h3>
+          <ul className="privacy-boundary__stack">
+            {onDevice.map((line) => (
+              <li key={line}>{line}</li>
             ))}
           </ul>
         </div>
 
-        <div className="privacy-boundary__wall" aria-hidden>
-          <span>nothing about your face crosses over</span>
+        <div className="privacy-boundary__mid">
+          <p>
+            Nothing we host can replay your webcam. If it is pixels from your
+            face, we never touched them.
+          </p>
         </div>
 
-        <div className="privacy-boundary__side privacy-boundary__side--server">
-          <p className="privacy-boundary__label">On our side</p>
-          <ul>
-            {serverItems.map((item) => (
-              <li key={item}>{item}</li>
+        <div className="privacy-boundary__pane">
+          <h3 className="privacy-boundary__pane-title">When you buy</h3>
+          <ul className="privacy-boundary__stack">
+            {onOurSystems.map((line) => (
+              <li key={line}>{line}</li>
             ))}
           </ul>
         </div>
