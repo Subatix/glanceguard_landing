@@ -193,31 +193,21 @@
   outline-offset: 3px;
 }
 
-.site-header__glyph {
-  background:
-    radial-gradient(
-      ellipse 140% 90% at 70% 12%,
-      color-mix(in oklch, var(--primary-foreground) 45%, transparent) 0,
-      transparent 68%
-    ),
-    linear-gradient(
-      148deg,
-      color-mix(in oklch, var(--primary) 96%, transparent),
-      color-mix(in oklch, var(--primary) 52%, transparent)
-    );
+.site-header__brand-icon {
   border-radius: clamp(9px, 1.4vw, 11px);
   box-shadow:
-    inset 0 2px 2px oklch(1 0 0 / 0.18),
-    0 0 0 1px oklch(0 0 0 / 0.06);
+    inset 0 1px 0 oklch(1 0 0 / 0.14),
+    0 1px 3px oklch(0 0 0 / 0.1);
   flex-shrink: 0;
   height: 1.54rem;
+  object-fit: contain;
   width: 1.54rem;
 }
 
 @media (prefers-color-scheme: dark) {
-  .site-header__glyph {
+  .site-header__brand-icon {
     box-shadow:
-      inset 0 1px 0 oklch(1 0 0 / 0.12),
+      inset 0 1px 0 oklch(1 0 0 / 0.08),
       0 0 0 1px oklch(0 0 0 / 0.42);
   }
 }

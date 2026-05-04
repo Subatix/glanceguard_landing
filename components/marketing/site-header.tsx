@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { BuyCheckoutButton } from "@/components/marketing/buy-checkout-button";
@@ -35,7 +36,15 @@ export function SiteHeader() {
           className="site-header__brand"
           aria-label="GlanceGuard home"
         >
-          <span className="site-header__glyph" aria-hidden />
+          <Image
+            src="/branding/glanceguard-icon.png"
+            alt=""
+            width={128}
+            height={128}
+            className="site-header__brand-icon"
+            sizes="26px"
+            priority
+          />
           GlanceGuard
         </Link>
 
