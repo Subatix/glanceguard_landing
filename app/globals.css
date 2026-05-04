@@ -248,38 +248,31 @@
 
   .site-header__rail-track {
     align-items: center;
-    background: color-mix(in oklch, var(--muted) 40%, transparent);
-    border: 1px solid color-mix(in oklch, var(--border) 93%, transparent);
-    border-radius: 999px;
-    box-shadow: var(--gg-shadow-tight), inset 0 1px 0 oklch(1 0 0 / 0.14);
     display: flex;
-    gap: 0.15rem;
-    padding: 0.32rem;
+    gap: clamp(1rem, 2.8vw, 1.72rem);
   }
 
   .site-header__rail-link {
-    border-radius: 999px;
-    color: color-mix(in oklch, var(--muted-foreground) 92%, transparent);
+    border-radius: min(var(--radius-sm), 8px);
+    color: color-mix(in oklch, var(--muted-foreground) 96%, transparent);
     font-family: var(--font-sans);
-    font-size: 0.8rem;
-    font-weight: 560;
-    line-height: 1.22;
-    padding: 0.42rem 0.95rem;
+    font-size: 0.8125rem;
+    font-weight: 590;
+    line-height: 1.28;
+    padding: 0.35rem min(var(--radius-sm), 8px);
     text-decoration: none;
-    transition:
-      background 130ms ease,
-      color 130ms ease;
+    transition: color 130ms ease;
     white-space: nowrap;
   }
 
   .site-header__rail-link:hover {
-    background: color-mix(in oklch, var(--gg-surface-raised) 75%, transparent);
+    background: transparent;
     color: var(--foreground);
   }
 
   .site-header__rail-link:focus-visible {
     outline: 2px solid color-mix(in oklch, var(--ring) 80%, transparent);
-    outline-offset: 2px;
+    outline-offset: 3px;
   }
 }
 
