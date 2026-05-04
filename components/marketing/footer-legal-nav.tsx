@@ -12,7 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const legalClass =
-  "text-muted-foreground hover:text-foreground block rounded-lg px-2 py-2 text-sm font-medium outline-none ring-ring hover:bg-muted focus-visible:ring-3";
+  "block rounded-md px-2 py-2 text-sm font-medium text-muted-foreground outline-none ring-ring transition hover:bg-muted hover:text-foreground focus-visible:ring-3";
 
 export function FooterLegalNav() {
   return (
@@ -21,9 +21,9 @@ export function FooterLegalNav() {
         <NavigationMenuItem value="policies-menu">
           <NavigationMenuTrigger
             aria-label="Open legal menu"
-            className="border-border text-muted-foreground hover:text-foreground data-open:bg-muted/60 h-auto w-fit border bg-transparent px-3 py-1.5 text-xs font-semibold tracking-[0.06em] uppercase"
+            className="h-auto w-fit border border-border bg-transparent px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground hover:text-foreground data-open:bg-muted/60"
           >
-            Legal menu
+            Legal
           </NavigationMenuTrigger>
           <NavigationMenuContent className="mt-3">
             <div className="ring-border rounded-xl border px-6 py-4 shadow-sm backdrop-blur-sm">
