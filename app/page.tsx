@@ -43,11 +43,12 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="home-hero__inner">
           <div className="home-hero__copy">
-            <p className="home-hero__kicker">Mac · desks, cafes, flights</p>
-            <h1>Someone behind your screen?</h1>
+            <p className="home-hero__kicker">Mac app · desks, cafes, aisle seats</p>
+            <h1>Get notified when someone&apos;s looking at your screen.</h1>
             <p className="home-hero__lede">
-              Quiet heads-up when someone lingers behind you.
-              Everything stays on your Mac. Nothing uploads.
+              GlanceGuard uses your Mac&apos;s camera to spot when someone
+              settles behind you—not a random passer-by. Runs only on this Mac
+              (no cloud video); a subtle menu bar cue instead of shouting.
             </p>
             <div className="home-hero__actions">
               <BuyCheckoutButton className="home-hero__button" />
@@ -56,7 +57,8 @@ export default function HomePage() {
               </p>
             </div>
             <p className="home-hero__microfacts">
-              On your Mac · gentle notice · menu bar
+              Catch shoulder-surfers early · Runs only here · Quick menu-bar
+              cue
             </p>
           </div>
 

@@ -7,12 +7,12 @@ import "./globals.css";
 
 const titleMeta = {
   default:
-    "GlanceGuard - quiet heads-up when someone is behind your screen",
+    "GlanceGuard - get notified when someone's looking at your screen",
   template: "%s - GlanceGuard",
 } satisfies Metadata["title"];
 
 const description =
-  "Quiet heads-up from your webcam when someone lingers behind you. Stays on your Mac. $20 once, one Mac, 30-day refund.";
+  "Uses your Mac's camera so you notice when someone's reading along behind you—not in the cloud. Subtle menu bar cue. $20 once, one Mac, 30-day refund.";
 
 export const metadata: Metadata = {
   metadataBase: getMarketingCanonicalOrigin(),
