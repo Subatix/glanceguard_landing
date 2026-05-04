@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 import { BuyCheckoutButton } from "@/components/marketing/buy-checkout-button";
+import { ContextSpotVisual } from "@/components/marketing/context-spot-visual";
 import { HeroScene } from "@/components/marketing/hero-scene";
 import { MarketingShell } from "@/components/marketing/marketing-shell";
 import { MechanismTrace } from "@/components/marketing/mechanism-trace";
@@ -66,27 +67,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="threat-model">
-        <div className="threat-model__text">
-          <span className="section-kicker">When this matters</span>
-          <h2>Most leaks aren’t hacks. They’re people.</h2>
+      <section className="context-spot" aria-labelledby="context-spot-heading">
+        <div className="context-spot__copy">
+          <p className="context-spot__eyebrow">Where it actually happens</p>
+          <h2 id="context-spot-heading">
+            The easy read is over your shoulder, not through the network.
+          </h2>
           <p>
-            A coffee shop. The seat next to you on a plane. A coworking
-            stretch. Your screen is bright and angled up, and someone is
-            quietly reading along. GlanceGuard lets you keep working without
-            having to glance back every few minutes.
+            Open rows, shared tables, aisle seats — the lid angles toward the
+            room while your eyes stay forward. Someone a step back picks up more
+            than you notice. GlanceGuard nudges you when attention hangs there —
+            not for every passer-by.
           </p>
         </div>
-        <div className="threat-strip" aria-hidden>
-          <span className="threat-strip__label threat-strip__label--you">you</span>
-          <span className="threat-strip__screen" />
-          <span className="threat-strip__field" />
-          <span className="threat-strip__label threat-strip__label--observer">
-            observer
-          </span>
-          <span className="threat-strip__person threat-strip__person--you" />
-          <span className="threat-strip__person threat-strip__person--observer" />
-        </div>
+        <ContextSpotVisual />
       </section>
 
       <MechanismTrace />

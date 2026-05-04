@@ -435,7 +435,7 @@
 }
 
 .home-hero h1,
-.threat-model h2,
+.context-spot h2,
 .trace-section h2,
 .privacy-boundary h2,
 .pricing-panel h2,
@@ -701,7 +701,7 @@
   padding: 0.78rem clamp(0.92rem, 3vw, 1.42rem);
 }
 
-.threat-model,
+.context-spot,
 .trace-section,
 .privacy-boundary,
 .pricing-panel,
@@ -711,19 +711,19 @@
   padding: clamp(4.5rem, 9vw, 8rem) clamp(1rem, 4vw, 2rem);
 }
 
-.threat-model {
+.context-spot {
   display: grid;
   gap: clamp(2rem, 5vw, 4.5rem);
   grid-template-columns: minmax(0, 0.76fr) minmax(340px, 1fr);
 }
 
-.threat-model__text {
+.context-spot__copy {
   display: grid;
   gap: 1.1rem;
   align-content: center;
 }
 
-.threat-model h2,
+.context-spot h2,
 .trace-section h2,
 .privacy-boundary h2,
 .pricing-panel h2,
@@ -732,7 +732,19 @@
   line-height: 0.96;
 }
 
-.threat-model p,
+.context-spot h2 {
+  line-height: 1.045;
+  letter-spacing: -0.052em;
+  max-width: min(19ch, 100%);
+}
+
+@media (min-width: 640px) {
+  .context-spot h2 {
+    max-width: 24ch;
+  }
+}
+
+.context-spot p,
 .trace-section__intro p,
 .privacy-boundary__header p,
 .pricing-panel__copy p,
@@ -743,71 +755,125 @@
   max-width: 43rem;
 }
 
-.threat-strip {
-  aspect-ratio: 1.9;
-  background: var(--gg-surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--gg-shadow-tight);
-  overflow: hidden;
-  position: relative;
+.context-spot__eyebrow {
+  color: color-mix(in oklch, var(--muted-foreground) 98%, transparent);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  margin: 0;
 }
 
-.threat-strip__screen {
-  background: color-mix(in oklch, var(--foreground) 8%, var(--gg-surface-inset));
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  bottom: 18%;
-  left: 19%;
-  position: absolute;
-  top: 16%;
-  width: 22%;
+.context-spot__figure {
+  display: grid;
+  gap: 1.05rem;
+  margin: 0;
+  min-width: 0;
 }
 
-.threat-strip__field {
-  border: 1px solid color-mix(in oklch, var(--primary) 42%, transparent);
-  border-radius: 999px;
-  inset: 12% 15% 13% 29%;
-  position: absolute;
+.context-spot__svg-wrap {
+  background: color-mix(in oklch, var(--gg-surface-inset) 22%, transparent);
+  border: 1px solid color-mix(in oklch, var(--border) 94%, transparent);
+  border-radius: min(var(--radius-xl), 14px);
+  padding: clamp(1.1rem, 3.2vw, 1.65rem);
 }
 
-.threat-strip__person {
-  border-radius: 999px 999px 44% 44%;
-  position: absolute;
+.context-spot__svg-wrap svg {
+  color: color-mix(in oklch, var(--foreground) 82%, transparent);
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
-.threat-strip__person--you {
-  background: color-mix(in oklch, var(--foreground) 15%, var(--gg-surface));
-  height: 31%;
-  left: 43%;
-  top: 38%;
-  width: 10%;
+.context-spot__svg-table {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.25;
+  opacity: 0.34;
 }
 
-.threat-strip__person--observer {
-  background: color-mix(in oklch, var(--primary) 28%, var(--gg-surface));
-  height: 24%;
-  right: 19%;
-  top: 29%;
-  width: 8%;
+.context-spot__svg-seat {
+  fill: color-mix(in oklch, currentColor 8%, transparent);
+  stroke: color-mix(in oklch, currentColor 24%, transparent);
+  stroke-width: 1;
 }
 
-.threat-strip__label {
-  color: var(--muted-foreground);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  position: absolute;
-  text-transform: uppercase;
+.context-spot__svg-head {
+  fill: color-mix(in oklch, currentColor 12%, transparent);
+  stroke: color-mix(in oklch, currentColor 26%, transparent);
+  stroke-width: 1;
 }
 
-.threat-strip__label--you {
-  left: 43%;
-  top: 73%;
+.context-spot__svg-lid {
+  fill: color-mix(in oklch, currentColor 6%, transparent);
+  stroke: color-mix(in oklch, currentColor 34%, transparent);
+  stroke-width: 1.05;
 }
 
-.threat-strip__label--observer {
-  right: 13%;
-  top: 57%;
+.context-spot__svg-screenplane {
+  fill: color-mix(in oklch, var(--primary) 7%, transparent);
+  stroke: color-mix(in oklch, currentColor 28%, transparent);
+  stroke-width: 1;
+}
+
+.context-spot__svg-base {
+  fill: color-mix(in oklch, currentColor 11%, transparent);
+  stroke: color-mix(in oklch, currentColor 32%, transparent);
+  stroke-width: 1;
+}
+
+.context-spot__svg-observer {
+  fill: color-mix(in oklch, var(--primary) 9%, transparent);
+  opacity: 0.92;
+  stroke: color-mix(in oklch, var(--primary) 42%, transparent);
+  stroke-width: 1;
+}
+
+.context-spot__svg-head-obs {
+  fill: color-mix(in oklch, currentColor 9%, transparent);
+  stroke: color-mix(in oklch, var(--primary) 48%, transparent);
+  stroke-width: 1;
+}
+
+.context-spot__svg-sight {
+  fill: none;
+  opacity: 0.62;
+  stroke: color-mix(in oklch, var(--primary) 52%, transparent);
+  stroke-dasharray: 5 7;
+  stroke-linecap: round;
+  stroke-width: 1.2;
+}
+
+.context-spot__legend {
+  color: color-mix(in oklch, var(--muted-foreground) 98%, transparent);
+  font-family: var(--font-sans);
+  font-size: 0.734rem;
+  letter-spacing: -0.012em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.context-spot__bullets {
+  display: grid;
+  gap: 0.48rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.context-spot__bullets li {
+  color: color-mix(in oklch, var(--muted-foreground) 99%, transparent);
+  font-family: var(--font-sans);
+  font-size: 0.8025rem;
+  letter-spacing: -0.014em;
+  line-height: 1.42;
+  padding-left: 0.78rem;
+  text-indent: -0.78rem;
+}
+
+.context-spot__bullets li::before {
+  color: color-mix(in oklch, var(--foreground) 32%, transparent);
+  content: "\2013\00a0";
 }
 
 .trace-section {
@@ -1097,7 +1163,7 @@
 
 @media (max-width: 900px) {
   .home-hero__inner,
-  .threat-model,
+  .context-spot,
   .trace-section__grid,
   .privacy-boundary__map,
   .pricing-panel,
@@ -1114,16 +1180,11 @@
 }
 
 @media (max-width: 640px) {
-
   .hero-scene__body {
     grid-template-columns: 1fr;
   }
 
   .mechanism-trace__step {
     grid-template-columns: 1fr;
-  }
-
-  .threat-strip {
-    aspect-ratio: 1.2;
   }
 }
