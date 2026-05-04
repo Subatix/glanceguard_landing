@@ -1,0 +1,24 @@
+{
+  "name": "glanceguard-landing",
+  "private": true,
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "semver": "^7.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/semver": "^7.7.1",
+    "typescript": "~5.8.3"
+  }
+}
