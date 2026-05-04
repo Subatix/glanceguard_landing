@@ -17,38 +17,30 @@ export function HeroScene() {
             <span className="hero-scene__presence hero-scene__presence--you" />
             <span className="hero-scene__presence hero-scene__presence--guest" />
           </div>
-          <p className="hero-scene__frame-label">Preview stays on your Mac.</p>
+          <p className="hero-scene__frame-label">Camera preview — only on this Mac.</p>
         </div>
 
         <aside className="hero-scene__sidebar">
-          <div className="hero-scene__card">
-            <p className="hero-scene__card-title">Today</p>
-            <dl className="hero-scene__status-list">
-              <div className="hero-scene__status-row">
-                <dt>You</dt>
-                <dd>
-                  <span className="hero-scene__pill">In frame</span>
-                </dd>
-              </div>
-              <div className="hero-scene__status-row">
-                <dt>Behind you</dt>
-                <dd>
-                  <span className="hero-scene__pill hero-scene__pill--accent">
-                    Staying put
-                  </span>
-                </dd>
-              </div>
-            </dl>
-            <div className="hero-scene__toast" role="presentation">
-              <span className="hero-scene__toast-dot" />
-              <span>Someone's still behind you.</span>
+          <div className="hero-scene__inspector" role="group" aria-label="What the app sees">
+            <div className="hero-scene__inspector-row">
+              <span className="hero-scene__inspector-key">You</span>
+              <span className="hero-scene__inspector-val">Recognized</span>
             </div>
+            <div className="hero-scene__inspector-row">
+              <span className="hero-scene__inspector-key">Behind you</span>
+              <span className="hero-scene__inspector-val hero-scene__inspector-val--watch">
+                Still in frame
+              </span>
+            </div>
+            <p className="hero-scene__inspector-note">
+              Shown as a small menu bar flag — not a shouty pop-over.
+            </p>
           </div>
         </aside>
       </div>
 
       <figcaption className="hero-scene__footnote">
-        Your camera stays here. Buying is separate.
+        Nothing from this window is uploaded. Purchase is off to the side, on purpose.
       </figcaption>
     </figure>
   );
