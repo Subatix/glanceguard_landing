@@ -869,6 +869,22 @@
   justify-content: space-between;
 }
 
+.site-footer__meta {
+  color: color-mix(in oklab, var(--muted-foreground) 70%, transparent);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}
+
+.site-footer__source {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted color-mix(in oklab, currentColor 50%, transparent);
+}
+
+.site-footer__source:hover {
+  color: var(--foreground);
+}
+
 @media (max-width: 900px) {
   .site-header__nav {
     display: none;

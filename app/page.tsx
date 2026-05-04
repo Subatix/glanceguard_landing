@@ -20,20 +20,20 @@ export const metadata: Metadata = {
 
 const faq = [
   {
-    q: "Does GlanceGuard upload my face to your servers?",
-    a: "No. Frames, crops, embeddings, and owner profiles stay on the Mac. The server sees commerce data, license keys, a hashed machine fingerprint, and refresh calls.",
+    q: "Does GlanceGuard send my face anywhere?",
+    a: "No. Your camera and anything it sees stay on your Mac. The only things our servers ever see are your purchase and your license — never your face.",
   },
   {
     q: "Why not just turn the camera off?",
-    a: "Sometimes the camera is legitimately on: calls, interviews, client work, travel. GlanceGuard is for that exposed state, when awareness matters but paranoia does not help.",
+    a: "Sometimes the camera is on for a reason — a call, an interview, a meeting. GlanceGuard is for those moments, when you’d still like a small heads-up if someone is reading along.",
   },
   {
     q: "Is there a free trial?",
-    a: "No. The product is a $20 lifetime license for one Mac. The 30-day refund policy is the safety net.",
+    a: "There isn’t. It’s $20 once for one Mac, yours forever. If it isn’t for you, you have 30 days to ask for your money back, no questions asked.",
   },
   {
-    q: "What triggers the warning?",
-    a: "A non-owner face must stay in the frame long enough to pass the sustain gate. Passing motion is treated differently from someone hovering behind you.",
+    q: "What does it actually do when someone is there?",
+    a: "It waits a moment to make sure they’re actually there, then gives you a small, calm notice. It doesn’t scream, lock the screen, or take pictures.",
   },
 ] as const;
 
@@ -43,32 +43,32 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="home-hero__inner">
           <div className="home-hero__copy">
-            <p className="section-kicker">macOS shoulder-surfing awareness</p>
-            <h1>Your screen has an audience before you do.</h1>
+            <p className="section-kicker">For your Mac · made for working in public</p>
+            <h1>Notice when someone is reading over your shoulder.</h1>
             <p className="home-hero__lede">
-              GlanceGuard watches the webcam for a second face that lingers in
-              frame, then warns you before your work becomes public. Detection
-              runs on the Mac. Face data does not go to our servers.
+              GlanceGuard quietly keeps an eye on your webcam and gives you a
+              small nudge if someone is staying behind you. It only ever runs
+              on your Mac — your camera never leaves it.
             </p>
             <div className="home-hero__actions">
               <BuyCheckoutButton className="home-hero__button" />
               <p>
-                $20 lifetime, one Mac. No trial.{" "}
+                $20 once, yours forever, on one Mac.{" "}
                 <Link href="/refund">30-day refund</Link>.
               </p>
             </div>
             <dl className="home-hero__facts">
               <div>
-                <dt>On-device</dt>
-                <dd>webcam inference</dd>
+                <dt>Stays on your Mac</dt>
+                <dd>your camera, not the cloud</dd>
               </div>
               <div>
-                <dt>No upload</dt>
-                <dd>frames or embeddings</dd>
+                <dt>Quiet on purpose</dt>
+                <dd>a small heads-up, never an alarm</dd>
               </div>
               <div>
-                <dt>Menu bar</dt>
-                <dd>quiet alert state</dd>
+                <dt>Out of the way</dt>
+                <dd>lives in the menu bar</dd>
               </div>
             </dl>
           </div>
@@ -79,12 +79,13 @@ export default function HomePage() {
 
       <section className="threat-model">
         <div className="threat-model__text">
-          <span className="section-kicker">Actual threat model</span>
-          <h2>The person behind you is not a hacker. That is the problem.</h2>
+          <span className="section-kicker">When this matters</span>
+          <h2>Most leaks aren’t hacks. They’re people.</h2>
           <p>
-            Open offices, cafes, airport gates, client sites: the leak is often
-            ordinary proximity. A laptop is bright, angled up, and full of
-            unfinished work.
+            A coffee shop. The seat next to you on a plane. A coworking
+            stretch. Your screen is bright and angled up, and someone is
+            quietly reading along. GlanceGuard lets you keep working without
+            having to glance back every few minutes.
           </p>
         </div>
         <div className="threat-strip" aria-hidden>
@@ -105,10 +106,11 @@ export default function HomePage() {
 
       <section className="faq-section" id="faq">
         <div className="faq-section__header">
-          <span className="section-kicker">Questions</span>
-          <h2>Plain answers before checkout.</h2>
+          <span className="section-kicker">Common questions</span>
+          <h2>A few things people ask first.</h2>
           <p>
-            If this does not answer it, use <Link href="/support">support</Link>.
+            Still wondering something?{" "}
+            <Link href="/support">Get in touch</Link>.
           </p>
         </div>
         <Accordion type="single" collapsible className="faq-section__accordion">

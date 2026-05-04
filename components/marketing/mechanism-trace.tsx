@@ -1,21 +1,21 @@
 const steps = [
   {
     code: "01",
-    title: "Enroll the owner",
-    body: "The app captures a small set of owner poses, rejects bad frames, and stores the resulting profile locally.",
-    detail: "profile: keychain + app data",
+    title: "Show it your face once",
+    body: "Sit in front of the camera for a moment so GlanceGuard knows it’s you. That’s the whole setup.",
+    detail: "Owner profile is stored on your Mac — never uploaded.",
   },
   {
     code: "02",
-    title: "Watch the frame",
-    body: "A lightweight detector tracks faces in the webcam feed and compares each track against the enrolled owner.",
-    detail: "frames: on-device only",
+    title: "It quietly keeps watch",
+    body: "While you work, GlanceGuard glances at the webcam now and then to see if it’s just you, or someone else as well.",
+    detail: "Faces are recognised on your Mac. No video leaves the device.",
   },
   {
     code: "03",
-    title: "Warn on linger",
-    body: "A non-owner face has to stay in frame before the app interrupts you. Passing movement is not the point.",
-    detail: "alert: overlay + menu bar",
+    title: "A small heads-up if someone’s there",
+    body: "If another person is genuinely staying behind you, you get a calm notice. Someone walking past does not count.",
+    detail: "A short on-screen alert plus a menu bar state — no sounds, no lock screen.",
   },
 ] as const;
 
@@ -25,13 +25,13 @@ export function MechanismTrace() {
       <div className="section-kicker">How it works</div>
       <div className="trace-section__grid">
         <div className="trace-section__intro">
-          <h2>Not magic. A small, local computer-vision loop.</h2>
+          <h2>It works the way you’d expect — and stays on your Mac.</h2>
           <p>
-            GlanceGuard is intentionally boring under the hood: enroll, compare,
-            sustain, alert. The restraint is the feature.
+            Three quiet steps: meet, watch, mention. Nothing dramatic, nothing
+            uploaded. The technical bits are below, in case you’re curious.
           </p>
         </div>
-        <ol className="mechanism-trace" aria-label="GlanceGuard mechanism">
+        <ol className="mechanism-trace" aria-label="How GlanceGuard works">
           {steps.map((step) => (
             <li className="mechanism-trace__step" key={step.code}>
               <span className="mechanism-trace__code">{step.code}</span>

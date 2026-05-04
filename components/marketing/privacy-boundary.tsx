@@ -1,32 +1,32 @@
 const localItems = [
-  "Webcam frames",
-  "Owner embedding",
-  "Face matching",
-  "Alert decisions",
+  "Your camera",
+  "Your face",
+  "What it sees",
+  "Whether to nudge you",
 ] as const;
 
 const serverItems = [
-  "Stripe receipt",
-  "License key",
-  "Machine hash",
-  "7-day JWT refresh",
+  "Your purchase",
+  "Your license",
+  "Your email for the receipt",
 ] as const;
 
 export function PrivacyBoundary() {
   return (
     <section className="privacy-boundary" id="privacy-story">
-      <div className="section-kicker">Privacy boundary</div>
+      <div className="section-kicker">What stays where</div>
       <div className="privacy-boundary__header">
-        <h2>The camera work stays on the laptop.</h2>
+        <h2>Your camera stays on your Mac. We just handle the receipt.</h2>
         <p>
-          The backend exists for payment, license delivery, refund revocation,
-          and future desktop validation. It is not a face-recognition server.
+          GlanceGuard is a small Mac app — the camera work happens there. Our
+          side is just the part that handles your purchase, sends you your
+          license, and lets you ask for a refund if you want one.
         </p>
       </div>
 
-      <div className="privacy-boundary__map" aria-label="Local versus server data">
+      <div className="privacy-boundary__map" aria-label="What stays on your Mac versus what we see">
         <div className="privacy-boundary__side">
-          <p className="privacy-boundary__label">Mac</p>
+          <p className="privacy-boundary__label">On your Mac</p>
           <ul>
             {localItems.map((item) => (
               <li key={item}>{item}</li>
@@ -35,11 +35,11 @@ export function PrivacyBoundary() {
         </div>
 
         <div className="privacy-boundary__wall" aria-hidden>
-          <span>no face data crosses</span>
+          <span>nothing about your face crosses over</span>
         </div>
 
         <div className="privacy-boundary__side privacy-boundary__side--server">
-          <p className="privacy-boundary__label">glanceguard.app</p>
+          <p className="privacy-boundary__label">On our side</p>
           <ul>
             {serverItems.map((item) => (
               <li key={item}>{item}</li>

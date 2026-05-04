@@ -1,16 +1,19 @@
 import Link from "next/link";
 
 import { FooterLegalNav } from "@/components/marketing/footer-legal-nav";
+import { glanceguardRepoHomepage } from "@/lib/site-links";
 
 export function SiteFooter() {
+  const repoUrl = glanceguardRepoHomepage().toString();
+
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
         <div className="site-footer__lead">
           <p className="site-footer__brand">GlanceGuard</p>
           <p>
-            A paid macOS binary for on-device shoulder-surfing awareness.
-            Source may be open; your camera feed is not a service endpoint.
+            A small, quiet Mac app that lets you know when someone is reading
+            over your shoulder.
           </p>
         </div>
 
@@ -24,7 +27,18 @@ export function SiteFooter() {
 
         <div className="site-footer__bottom">
           <FooterLegalNav />
-          <p>&copy; {new Date().getFullYear()} GlanceGuard</p>
+          <p className="site-footer__meta">
+            &copy; {new Date().getFullYear()} GlanceGuard
+            {" · "}
+            <a
+              className="site-footer__source"
+              href={repoUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              source
+            </a>
+          </p>
         </div>
       </div>
     </footer>

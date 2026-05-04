@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BuyCheckoutButton } from "@/components/marketing/buy-checkout-button";
 
 const navLinks = [
-  { href: "/#how", label: "Mechanism" },
+  { href: "/#how", label: "How it works" },
   { href: "/#privacy-story", label: "Privacy" },
   { href: "/download", label: "Download" },
   { href: "/support", label: "Support" },
