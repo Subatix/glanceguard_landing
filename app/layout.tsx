@@ -1,14 +1,59 @@
+import type { Metadata } from "next";
+import { DM_Mono, Outfit } from "next/font/google";
 import type { ReactNode } from "react";
 
-export const metadata = {
-  title: "GlanceGuard",
-  description: "GlanceGuard — observer detection for your Mac",
+import { getMarketingCanonicalOrigin } from "@/lib/site-metadata";
+
+import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--gf-display",
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--gg-mono",
+  display: "swap",
+});
+
+const titleMeta = {
+  default: "GlanceGuard — know when someone's looking at your screen",
+  template: "%s · GlanceGuard",
+} satisfies Metadata["title"];
+
+const description =
+  "$20 lifetime, one Mac · GlanceGuard uses your webcam — on-device only — to detect when another person's face lingers beside yours and warns you before your screen leaks.";
+
+export const metadata: Metadata = {
+  metadataBase: getMarketingCanonicalOrigin(),
+  title: titleMeta,
+  description,
+  applicationName: "GlanceGuard",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "GlanceGuard",
+    title: titleMeta.default ?? "GlanceGuard",
+    description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: titleMeta.default ?? "GlanceGuard",
+    description,
+    creator: "@Subatix",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${dmMono.variable}`}>
+      <body className="flex min-h-dvh flex-col">{children}</body>
     </html>
   );
 }
